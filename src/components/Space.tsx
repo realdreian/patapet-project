@@ -42,42 +42,36 @@ export const Space: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-3xl overflow-hidden shadow-2xl border-4 sm:border-8 border-cream bg-sand/30 mb-12 sm:mb-16"
+          className="relative rounded-3xl overflow-hidden shadow-xl border-4 sm:border-8 border-cream bg-sand/30 mb-12 sm:mb-16"
         >
-          {/* Imagem da Fachada com proporção nobre */}
-          <div className="aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/10] w-full overflow-hidden">
+          {/* Container com aspect ratio 4:3 nativo da fotografia para exibir 100% da imagem sem corte */}
+          <div className="w-full aspect-[4/3] overflow-hidden bg-sand/20">
             <img
               src="/faixada.png"
-              alt="Fachada oficial do Centro de Bem-Estar Animal Pata Amiga"
-              className="w-full h-full object-cover object-center warm-filter transition-transform duration-700 hover:scale-102"
+              alt="Fachada oficial do Centro de Bem-Estar Animal Pata Amiga com letreiro iluminado e ambiente acolhedor"
+              className="w-full h-full object-contain sm:object-cover object-top sm:object-center warm-filter transition-transform duration-700 hover:scale-101"
               loading="lazy"
             />
           </div>
 
-          {/* Gradiente escurecido suave e overlay de identificação */}
-          <div
-            className="absolute inset-0 bg-gradient-to-t from-brown/70 via-brown/20 to-transparent pointer-events-none"
-            aria-hidden="true"
-          />
-
-          {/* Legenda institucional sutil dentro da foto */}
-          <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 right-4 sm:right-8 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-3 text-cream">
-            <div>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cream/20 backdrop-blur-md text-xs font-medium text-cream mb-2">
-                <MapPin className="w-3.5 h-3.5" />
-                <span>Nossa Sede</span>
-              </span>
-              <h3 className="font-serif text-xl sm:text-2xl lg:text-3xl font-bold text-cream drop-shadow-sm">
-                Pata Amiga — Centro de Bem-Estar Animal
-              </h3>
-              <p className="text-xs sm:text-sm text-cream/90 font-normal max-w-lg mt-1">
-                Concebido para ser uma extensão do conforto do seu lar, com iluminação acolhedora e
-                acústica controlada.
-              </p>
+          {/* Barra Institucional Integrada na base do card */}
+          <div className="bg-cream-50 border-t border-sand/70 p-4 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-caramel/15 text-caramel flex items-center justify-center shrink-0">
+                <MapPin className="w-5 h-5 text-caramel" />
+              </div>
+              <div>
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-brown">
+                  Nossa Sede — Pata Amiga
+                </h3>
+                <p className="text-xs sm:text-sm text-brown/75">
+                  Concebida para ser uma extensão do conforto do seu lar, com iluminação acolhedora e acústica serena.
+                </p>
+              </div>
             </div>
 
-            <div className="hidden md:flex items-center gap-2 bg-cream/20 backdrop-blur-md px-4 py-2 rounded-xl text-xs font-medium border border-cream/30">
-              <span className="w-2 h-2 rounded-full bg-green" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sand/40 border border-sand text-xs font-semibold text-brown self-start sm:self-auto shrink-0">
+              <span className="w-2 h-2 rounded-full bg-green" aria-hidden="true" />
               <span>Visitas abertas com agendamento</span>
             </div>
           </div>

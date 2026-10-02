@@ -109,9 +109,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                   fetchPriority="high"
                 />
 
-                {/* Gradiente sutil inferior */}
+                {/* Gradiente ultra sutil inferior */}
                 <div
-                  className="absolute inset-0 bg-gradient-to-t from-brown/30 via-transparent to-transparent pointer-events-none"
+                  className="absolute inset-0 bg-gradient-to-t from-brown/10 via-transparent to-transparent pointer-events-none"
                   aria-hidden="true"
                 />
               </div>
