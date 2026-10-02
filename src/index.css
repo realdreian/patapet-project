@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FAF5EC;
+  --color-cream-50: #FFFDF9;
+  --color-cream-100: #FAF5EC;
+  --color-cream-200: #F3EBDD;
+  --color-cream-300: #E7DAC5;
+
+  --color-brown: #422719;
+  --color-brown-50: #F7F3F0;
+  --color-brown-100: #ECE3DC;
+  --color-brown-200: #D5C2B4;
+  --color-brown-700: #583522;
+  --color-brown-800: #422719;
+  --color-brown-900: #2C180E;
+
+  --color-caramel: #C97842;
+  --color-caramel-50: #FAF1EB;
+  --color-caramel-100: #F4E2D3;
+  --color-caramel-500: #C97842;
+  --color-caramel-600: #B76732;
+  --color-caramel-700: #9E5324;
+
+  --color-green: #536B57;
+  --color-green-50: #F1F4F1;
+  --color-green-100: #DFE7E0;
+  --color-green-500: #536B57;
+  --color-green-600: #445947;
+  --color-green-700: #354638;
+
+  --color-sand: #EADBC7;
+  --color-sand-50: #FAF7F2;
+  --color-sand-100: #F4ECE0;
+  --color-sand-200: #EADBC7;
+  --color-sand-300: #D8C3AA;
+
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+:root {
+  --color-cream: #FAF5EC;
+  --color-brown: #422719;
+  --color-caramel: #C97842;
+  --color-green: #536B57;
+  --color-sand: #EADBC7;
+}
+
+/* Base custom styles and smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus styles for keyboard accessibility */
+:focus-visible {
+  outline: 2px solid #C97842;
+  outline-offset: 3px;
+}
+
+/* Warm subtle image filter utility */
+.warm-filter {
+  filter: contrast(102%) saturate(104%);
+}
