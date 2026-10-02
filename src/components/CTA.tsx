@@ -9,14 +9,14 @@ interface CTAProps {
 
 export const CTA: React.FC<CTAProps> = ({ onOpenBooking }) => {
   return (
-    <section className="py-20 sm:py-28 bg-cream relative overflow-hidden">
+    <section className="py-20 sm:py-28 bg-cream dark:bg-dark-surface transition-colors duration-200 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-brown to-brown-900 text-cream p-8 sm:p-12 lg:p-16 shadow-2xl border border-brown-700 text-center"
+          className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-brown to-brown-900 dark:from-[#2E1D13] dark:to-[#170E08] text-cream p-8 sm:p-12 lg:p-16 shadow-2xl border border-brown-700 dark:border-dark-border text-center"
         >
           {/* Efeitos decorativos orgânicos de iluminação */}
           <div
@@ -31,7 +31,7 @@ export const CTA: React.FC<CTAProps> = ({ onOpenBooking }) => {
           <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
             {/* Tag / Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cream/10 border border-cream/15 text-sand text-xs font-semibold tracking-wide uppercase mb-6">
-              <Sparkles className="w-3.5 h-3.5 text-caramel" />
+              <Sparkles className="w-3.5 h-3.5 text-caramel dark:text-caramel-400" />
               <span>Cuidado & Confiança</span>
             </div>
 
@@ -41,7 +41,7 @@ export const CTA: React.FC<CTAProps> = ({ onOpenBooking }) => {
             </h2>
 
             {/* Texto de Apoio */}
-            <p className="text-base sm:text-lg lg:text-xl text-cream/80 max-w-xl mb-9 leading-relaxed font-light">
+            <p className="text-base sm:text-lg lg:text-xl text-cream/85 max-w-xl mb-9 leading-relaxed font-light">
               Estamos prontos para receber seu melhor amigo com todo carinho.
             </p>
 
@@ -66,7 +66,7 @@ export const CTA: React.FC<CTAProps> = ({ onOpenBooking }) => {
             {/* Microcopy */}
             <p className="text-xs sm:text-sm text-sand/80 flex items-center justify-center gap-1.5">
               <span>Fale com a Pata Amiga pelo WhatsApp.</span>
-              <Heart className="w-3.5 h-3.5 text-caramel fill-caramel inline" />
+              <Heart className="w-3.5 h-3.5 text-caramel dark:text-caramel-400 fill-caramel dark:fill-caramel-400 inline" />
             </p>
           </div>
         </motion.div>

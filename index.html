@@ -27,8 +27,23 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Anti-flash script for Warm Dark / Light Theme -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('pata_amiga_theme');
+          var supportDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && supportDark)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
-  <body class="bg-cream text-brown font-sans antialiased selection:bg-caramel/20 selection:text-brown min-h-screen overflow-x-hidden">
+  <body class="bg-cream text-brown dark:bg-dark-bg dark:text-dark-text font-sans antialiased selection:bg-caramel/20 selection:text-brown dark:selection:bg-caramel/30 dark:selection:text-cream min-h-screen overflow-x-hidden">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

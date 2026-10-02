@@ -11,13 +11,13 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'bath':
-        return <Sparkles className="w-5 h-5 text-caramel" />;
+        return <Sparkles className="w-5 h-5 text-caramel dark:text-caramel-400" />;
       case 'home':
-        return <Home className="w-5 h-5 text-green" />;
+        return <Home className="w-5 h-5 text-green dark:text-green-400" />;
       case 'paw':
-        return <Footprints className="w-5 h-5 text-caramel" />;
+        return <Footprints className="w-5 h-5 text-caramel dark:text-caramel-400" />;
       default:
-        return <Sparkles className="w-5 h-5 text-caramel" />;
+        return <Sparkles className="w-5 h-5 text-caramel dark:text-caramel-400" />;
     }
   };
 
@@ -35,19 +35,19 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
   };
 
   return (
-    <section id="servicos" className="py-20 sm:py-28 bg-cream relative">
+    <section id="servicos" className="py-20 sm:py-28 bg-cream dark:bg-dark-surface transition-colors duration-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Cabeçalho da Seção */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sand/40 border border-sand/70 text-caramel font-semibold text-xs uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sand/40 dark:bg-dark-elevated border border-sand/70 dark:border-dark-border text-caramel dark:text-caramel-400 font-semibold text-xs uppercase tracking-wider mb-3">
             <span>CUIDADO COMPLETO</span>
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brown font-bold tracking-tight mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brown dark:text-dark-text font-bold tracking-tight mb-4">
             Tudo que seu melhor amigo precisa.
           </h2>
 
-          <p className="text-base sm:text-lg text-brown/75 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-brown/75 dark:text-dark-muted max-w-2xl mx-auto">
             Três serviços dedicados, desenhados para acolher com respeito, tranquilidade e carinho em
             cada fase do dia a dia.
           </p>
@@ -67,10 +67,10 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.5, delay: index * 0.12 }}
-                className="bg-cream-50 rounded-3xl border border-sand/70 overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col group hover:-translate-y-1"
+                className="bg-cream-50 dark:bg-dark-elevated rounded-3xl border border-sand/70 dark:border-dark-border overflow-hidden shadow-xs hover:shadow-lg dark:hover:border-caramel/40 transition-all duration-300 flex flex-col group hover:-translate-y-1"
               >
                 {/* Imagem do Serviço */}
-                <div className="relative h-52 sm:h-56 overflow-hidden bg-sand/30">
+                <div className="relative h-52 sm:h-56 overflow-hidden bg-sand/30 dark:bg-dark-surface">
                   <img
                     src={getServiceImage(service.id)}
                     alt={`${service.title} na Pata Amiga`}
@@ -78,38 +78,38 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
                     loading="lazy"
                   />
                   <div
-                    className="absolute inset-0 bg-gradient-to-t from-brown/50 via-transparent to-transparent"
+                    className="absolute inset-0 bg-gradient-to-t from-brown/50 dark:from-dark-bg/60 via-transparent to-transparent"
                     aria-hidden="true"
                   />
 
                   {/* Tag Pill na Imagem */}
-                  <div className="absolute top-4 left-4 bg-cream/95 backdrop-blur-xs px-3 py-1 rounded-full border border-sand/50 shadow-xs flex items-center gap-1.5">
+                  <div className="absolute top-4 left-4 bg-cream/95 dark:bg-dark-surface/95 backdrop-blur-xs px-3 py-1 rounded-full border border-sand/50 dark:border-dark-border shadow-xs flex items-center gap-1.5">
                     {getIcon(service.iconName)}
-                    <span className="text-xs font-semibold text-brown">{service.tag}</span>
+                    <span className="text-xs font-semibold text-brown dark:text-dark-text">{service.tag}</span>
                   </div>
                 </div>
 
                 {/* Conteúdo do Card */}
                 <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="font-serif text-2xl font-bold text-brown mb-2 group-hover:text-caramel transition-colors">
+                    <h3 className="font-serif text-2xl font-bold text-brown dark:text-dark-text mb-2 group-hover:text-caramel dark:group-hover:text-caramel-400 transition-colors">
                       {service.title}
                     </h3>
 
-                    <p className="text-sm font-medium text-caramel mb-3 italic">
+                    <p className="text-sm font-medium text-caramel dark:text-caramel-400 mb-3 italic">
                       "{service.subtitle}"
                     </p>
 
-                    <p className="text-sm text-brown/80 leading-relaxed mb-6">
+                    <p className="text-sm text-brown/80 dark:text-dark-muted leading-relaxed mb-6">
                       {service.description}
                     </p>
 
                     {/* Lista de Destaques */}
-                    <div className="space-y-2 mb-6 pt-4 border-t border-sand/40">
+                    <div className="space-y-2 mb-6 pt-4 border-t border-sand/40 dark:border-dark-border">
                       {service.highlights.map((highlight, hIdx) => (
-                        <div key={hIdx} className="flex items-start gap-2 text-xs text-brown/80">
-                          <div className="w-4 h-4 rounded-full bg-sand/50 flex items-center justify-center shrink-0 mt-0.5">
-                            <Check className="w-3 h-3 text-green" />
+                        <div key={hIdx} className="flex items-start gap-2 text-xs text-brown/80 dark:text-dark-muted">
+                          <div className="w-4 h-4 rounded-full bg-sand/50 dark:bg-dark-border flex items-center justify-center shrink-0 mt-0.5">
+                            <Check className="w-3 h-3 text-green dark:text-green-400" />
                           </div>
                           <span>{highlight}</span>
                         </div>
@@ -118,8 +118,8 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
                   </div>
 
                   {/* Rodapé do Card com CTA Contextual */}
-                  <div className="pt-4 border-t border-sand/50 mt-auto">
-                    <p className="text-[11px] text-brown/60 mb-3">{service.durationHint}</p>
+                  <div className="pt-4 border-t border-sand/50 dark:border-dark-border mt-auto">
+                    <p className="text-[11px] text-brown/60 dark:text-dark-soft mb-3">{service.durationHint}</p>
 
                     <a
                       href={serviceWhatsappLink}
@@ -131,9 +131,9 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
                           onSelectService(service.title);
                         }
                       }}
-                      className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-sand/35 hover:bg-caramel hover:text-cream text-brown font-medium text-sm transition-all duration-200 group/btn border border-sand/60"
+                      className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-sand/35 hover:bg-caramel hover:text-cream text-brown dark:bg-dark-surface dark:text-dark-text dark:border-dark-border dark:hover:bg-caramel font-medium text-sm transition-all duration-200 group/btn border border-sand/60"
                     >
-                      <MessageCircle className="w-4 h-4 text-caramel group-hover/btn:text-cream transition-colors" />
+                      <MessageCircle className="w-4 h-4 text-caramel dark:text-caramel-400 group-hover/btn:text-cream transition-colors" />
                       <span>Agendar {service.title}</span>
                       <ArrowRight className="w-3.5 h-3.5 opacity-60 group-hover/btn:opacity-100 group-hover/btn:translate-x-0.5 transition-all" />
                     </a>

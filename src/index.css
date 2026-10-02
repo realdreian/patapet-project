@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
+  /* Paleta Light (Creme, Marrom, Caramelo, Verde, Areia) */
   --color-cream: #FAF5EC;
   --color-cream-50: #FFFDF9;
   --color-cream-100: #FAF5EC;
@@ -18,6 +21,7 @@
   --color-caramel: #C97842;
   --color-caramel-50: #FAF1EB;
   --color-caramel-100: #F4E2D3;
+  --color-caramel-400: #DE8448;
   --color-caramel-500: #C97842;
   --color-caramel-600: #B76732;
   --color-caramel-700: #9E5324;
@@ -25,6 +29,7 @@
   --color-green: #536B57;
   --color-green-50: #F1F4F1;
   --color-green-100: #DFE7E0;
+  --color-green-400: #6D8E72;
   --color-green-500: #536B57;
   --color-green-600: #445947;
   --color-green-700: #354638;
@@ -34,6 +39,17 @@
   --color-sand-100: #F4ECE0;
   --color-sand-200: #EADBC7;
   --color-sand-300: #D8C3AA;
+  --color-sand-400: #C2AB90;
+
+  /* Paleta WARM DARK (Chocolate Escuro, Noturno, Acolhedor) */
+  --color-dark-bg: #1A110B;          /* Fundo principal chocolate muito escuro */
+  --color-dark-surface: #261912;     /* Fundo de seções e cards */
+  --color-dark-elevated: #332219;    /* Cards destacados, drawers e headers */
+  --color-dark-border: #443023;      /* Bordas em marrom quente */
+  --color-dark-border-subtle: #362419; /* Linhas discretas */
+  --color-dark-text: #FBF6EE;        /* Texto principal creme amanteigado */
+  --color-dark-muted: #D5C2B1;       /* Texto secundário bege/areia */
+  --color-dark-soft: #A89381;        /* Microtextos e legendas */
 
   --font-serif: 'Fraunces', Georgia, serif;
   --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -45,6 +61,14 @@
   --color-caramel: #C97842;
   --color-green: #536B57;
   --color-sand: #EADBC7;
+}
+
+/* Transição suave e curta de tema entre 150ms e 250ms */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease, fill 200ms ease, box-shadow 200ms ease !important;
 }
 
 /* Base custom styles and smooth scroll */
