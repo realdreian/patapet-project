@@ -59,6 +59,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
   };
 
   return (
+    <>
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
@@ -152,6 +153,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
         </div>
       </div>
 
+    </header>
+
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
         <div
@@ -204,6 +207,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 };

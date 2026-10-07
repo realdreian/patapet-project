@@ -26,7 +26,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-cream text-brown font-sans flex flex-col selection:bg-caramel/20 selection:text-brown antialiased">
+    <div className="min-h-screen bg-cream text-brown dark:bg-dark-bg dark:text-dark-text font-sans flex flex-col selection:bg-caramel/20 selection:text-brown dark:selection:bg-caramel/30 dark:selection:text-cream antialiased">
       {/* 1. Header com Navegação e Logo Oficial */}
       <Header onOpenBooking={() => handleOpenBooking()} />
 

@@ -13,17 +13,17 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ onOpenBookin
     <div className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 flex items-end flex-col gap-2">
       {/* Balãozinho amigável com botão de fechar */}
       {showTooltip && (
-        <div className="bg-cream-50 text-brown border border-sand shadow-lg rounded-2xl p-3 pr-8 text-xs max-w-[220px] relative animate-in fade-in slide-in-from-bottom-2 duration-300">
+        <div className="bg-cream-50 text-brown border border-sand dark:bg-dark-elevated dark:text-dark-text dark:border-dark-border shadow-lg rounded-2xl p-3 pr-8 text-xs max-w-[220px] relative animate-in fade-in slide-in-from-bottom-2 duration-300">
           <button
             type="button"
             onClick={() => setShowTooltip(false)}
-            className="absolute top-2 right-2 text-brown/40 hover:text-brown"
+            className="absolute top-2 right-2 text-brown/40 hover:text-brown dark:text-dark-soft dark:hover:text-dark-text"
             aria-label="Fechar mensagem de ajuda"
           >
             <X className="w-3.5 h-3.5" />
           </button>
-          <p className="font-semibold text-caramel mb-0.5">Precisa de ajuda?</p>
-          <p className="text-brown/80 leading-tight">
+          <p className="font-semibold text-caramel dark:text-caramel-400 mb-0.5">Precisa de ajuda?</p>
+          <p className="text-brown/80 dark:text-dark-muted leading-tight">
             Clique para agendar um atendimento pelo WhatsApp!
           </p>
         </div>
